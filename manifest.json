@@ -1,0 +1,14 @@
+{
+  "name": "HCore.Packages.Agent",
+  "version": "1.0.0",
+  "baseVersion": "1.0.0",
+  "description": "Simple LLM agent with HCore VFS tools (Deepseek OpenAI API)",
+  "commands": [
+    {
+      "name": "agent",
+      "description": "agent [-s <session>] [prompt]   Interactive LLM agent (VFS+shell tools, saved sessions)",
+      "mode": "oneshot",
+      "moduleName": "HCore.Packages.Agent.Agent"
+    }
+  ]
+}
