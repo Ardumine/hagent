@@ -80,6 +80,13 @@ Conversations auto-save after each turn to `/home/agent/sessions/<name>.json`.
 
 `pkg_build` relies on the kernel's `@forge` service (VFS↔host path bridge + runtime module registration), available in recent `hcore`.
 
+## Examples
+
+See [docs/EXAMPLES.md](docs/EXAMPLES.md) for ready-to-paste prompts — from
+inspecting the system to having the agent build and run an HTTP server module on
+the fly — plus tips for prompting reliably (notably: the `shell` tool runs
+HShell, **not** bash).
+
 ## License
 
 See the HCore project.
