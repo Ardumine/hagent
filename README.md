@@ -12,14 +12,16 @@ ardumine/
   hagent/     # this repo
 ```
 
-The project references the kernel via a peer relative path (`..\hcore\src\HCore.Modules.Base`) and its PostBuild step deploys the built pack into `../hcore/FS/packs/`.
+The project consumes the ABI (`HCore.Modules.Base`) as a **git submodule** (pinned to a
+released tag) and its PostBuild step deploys the built pack into `../hcore/FS/packs/`, so
+a kernel clone must sit alongside for deploy/run.
 
 ## Build
 
 ```bash
 # from a workspace containing both hcore/ and hagent/
-git clone https://github.com/Ardumine/hcore.git
-git clone https://github.com/Ardumine/hagent.git
+git clone --recurse-submodules https://github.com/Ardumine/hcore.git
+git clone --recurse-submodules https://github.com/Ardumine/hagent.git
 
 cd hagent
 dotnet build           # compiles + deploys to ../hcore/FS/packs/HCore.Packages.Agent
@@ -45,7 +47,7 @@ Optional `/etc/agent/config.json` selects the model/endpoint (defaults shown):
 Boot the kernel, then launch the agent from the HCore shell:
 
 ```
-$ dotnet run --project ../hcore/src/HCore.Main
+$ dotnet run --project ../hcore/HCore.Main
 ...
 / $ agent
 HCore Agent (deepseek-chat). Session: session-... Type your message.

@@ -10,7 +10,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\hcore\src\HCore.Modules.Base\HCore.Modules.Base.csproj" />
+        <ProjectReference Include="HCore.Modules.Base\HCore.Modules.Base.csproj" />
+    </ItemGroup>
+
+    <!-- Keep the Base submodule sources out of this package's compile. -->
+    <ItemGroup>
+        <Compile Remove="HCore.Modules.Base\**\*.cs" />
+        <None Remove="HCore.Modules.Base\**" />
     </ItemGroup>
 
     <ItemGroup>
